@@ -1,14 +1,29 @@
-import React from "react";
+import React, { useState, useEffect, ReactNode } from "react";
+import { getSkills } from "@/services/user";
+import ImageRenderer from "./UI/ImageRenderer";
 
 const SkillsCarousel: React.FC = () => {
+  const [skills, setSkills] = useState<Skill[]>([]);
+
+  useEffect(() => {
+    fetchSkills();
+  }, []);
+
+  const fetchSkills = async (): Promise<void> => {
+    try {
+      const res = (await getSkills("clavibaldi91")) as Skill[];
+      setSkills(res);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <section id="skills" className="p-4">
-      <h2 className="text-xl font-semibold mb-4">Skills</h2>
-      <div className="flex overflow-x-auto">
-        {/* Add your skill images in a scrollable container */}
-        <img src="/images/skill1.png" alt="Skill 1" className="w-32 h-32 m-2" />
-        <img src="/images/skill2.png" alt="Skill 2" className="w-32 h-32 m-2" />
-        {/* Add more skill images */}
+      <h2 className="text-xl font-semibold mb-4">Skills and Tools</h2>
+      <div className="flex overflow-x-auto gap-8 items-center">
+        {skills.length > 0 &&
+          skills.map((skill) => <ImageRenderer svg={skill.svg} />)}
       </div>
     </section>
   );

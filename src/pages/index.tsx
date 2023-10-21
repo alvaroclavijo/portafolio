@@ -21,7 +21,7 @@ const projects = [
 const Home: React.FC = () => {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <Banner />
       <SkillsCarousel />
 
