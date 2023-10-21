@@ -1,6 +1,7 @@
 import React, { useState, useEffect, ReactNode } from "react";
 import { getSkills } from "@/services/user";
 import ImageRenderer from "./UI/ImageRenderer";
+import Marquee from "react-fast-marquee";
 
 const SkillsCarousel: React.FC = () => {
   const [skills, setSkills] = useState<Skill[]>([]);
@@ -21,10 +22,12 @@ const SkillsCarousel: React.FC = () => {
   return (
     <section id="skills" className="p-4">
       <h2 className="text-xl font-semibold mb-4">Skills and Tools</h2>
-      <div className="flex overflow-x-auto gap-8 items-center">
-        {skills.length > 0 &&
-          skills.map((skill) => <ImageRenderer svg={skill.svg} />)}
-      </div>
+      <Marquee>
+        <div className="flex overflow-x-auto gap-8 items-center">
+          {skills.length > 0 &&
+            skills.map((skill) => <ImageRenderer svg={skill.svg} />)}
+        </div>
+      </Marquee>
     </section>
   );
 };
