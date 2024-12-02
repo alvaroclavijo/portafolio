@@ -5,4 +5,5 @@ interface User {
   role:string;
   description:string;
   skills:Skill[];
+  projects:Project[];
 }
