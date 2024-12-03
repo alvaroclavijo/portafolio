@@ -1,6 +1,8 @@
 import React from "react";
 import FixedWidthContainer from "./UI/FixedWidthContainer";
 import Image from "next/image";
+import Link from "next/link";
+import { ROUTES } from "@/constants/routes";
 
 const Banner: React.FC = () => {
   return (
@@ -31,8 +33,8 @@ const Banner: React.FC = () => {
           <p className="mt-4">
             I am a full-stack developer with over 5 years of experience.
           </p>
-          <a
-            href="#_"
+          <Link
+            href={ROUTES.PROJECTS}
             className="relative inline-flex items-center justify-center px-16 py-8 font-mono font-medium text-xl tracking-tighter text-white bg-gray-800 rounded-lg group overflow-hidden transition duration-300 ease-in-out hover:bg-green-500 mt-12"
           >
             <span className="absolute w-full h-full transition-transform duration-500 ease-out transform -translate-y-full group-hover:translate-y-0 text-xs">
@@ -40,7 +42,7 @@ const Banner: React.FC = () => {
             </span>
             <span className="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-gray-700"></span>
             <span className="relative z-10">Projects</span>
-          </a>
+          </Link>
         </div>
       </FixedWidthContainer>
     </section>

@@ -12,9 +12,6 @@ const Home: React.FC = () => {
     <div>
       {/* <Navbar /> */}
       <Banner />
-      <SkillsCarousel />
-      <Projects />
-      <ContactSection />
     </div>
   );
 };

@@ -20,14 +20,15 @@ const Projects: React.FC<ProjectsProps> = ({}) => {
       console.log(error);
     }
   };
+
   return (
-    <FixedWidthContainer id="projects" className=" py-8">
+    <FixedWidthContainer id="projects" className="py-8">
       <div className="max-w-5xl mb-4">
         <h2 className="text-3xl font-semibold">Projects</h2>
       </div>
-      <div className="flex flex-wrap ">
-        {projects.map((project, index) => (
-          <ProjectCard key={index} {...project} />
+      <div className="w-full flex flex-col items-center md:flex-row md:justify-start flex-wrap gap-10 justify-center">
+        {projects.map((project) => (
+          <ProjectCard {...project} key={project.id} />
         ))}
       </div>
     </FixedWidthContainer>
