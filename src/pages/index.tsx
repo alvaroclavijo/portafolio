@@ -6,11 +6,13 @@ import Banner from "../components/Banner";
 import SkillsCarousel from "@/components/Skills";
 import ContactSection from "@/components/ContactSection";
 import Projects from "@/components/Projects";
+import SideMenu from "@/components/SideMenu/SideMenu";
 
 const Home: React.FC = () => {
   return (
-    <div>
+    <div className="relative">
       {/* <Navbar /> */}
+      <SideMenu/>
       <Banner />
     </div>
   );
