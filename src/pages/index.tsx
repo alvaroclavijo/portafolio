@@ -1,20 +1,14 @@
 // pages/index.tsx
 
 import React from "react";
-import Navbar from "@/components/NavBar";
 import Banner from "../components/Banner";
-import SkillsCarousel from "@/components/Skills";
-import ContactSection from "@/components/ContactSection";
-import Projects from "@/components/Projects";
-import SideMenu from "@/components/SideMenu/SideMenu";
+import Layout from "@/layout/Layout";
 
 const Home: React.FC = () => {
   return (
-    <div className="relative">
-      {/* <Navbar /> */}
-      <SideMenu/>
+    <Layout>
       <Banner />
-    </div>
+    </Layout>
   );
 };
 

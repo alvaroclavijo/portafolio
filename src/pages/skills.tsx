@@ -1,11 +1,14 @@
 import Skills from "@/components/Skills";
 import FixedWidthContainer from "@/components/UI/FixedWidthContainer";
+import Layout from "@/layout/Layout";
 
 const SkillsPage = () => {
   return (
-    <FixedWidthContainer>
-      <Skills />
-    </FixedWidthContainer>
+    <Layout>
+      <FixedWidthContainer>
+        <Skills />
+      </FixedWidthContainer>
+    </Layout>
   );
 };
 
