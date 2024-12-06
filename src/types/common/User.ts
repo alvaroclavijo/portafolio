@@ -1,4 +1,7 @@
-interface User {
+import { Project } from "./Project";
+import { Skill } from "./Skill";
+
+export interface User {
   id:string;
   name:string;
   lastName:string;

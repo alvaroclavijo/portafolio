@@ -1,4 +1,5 @@
 import { users } from "@/temporalDBData/users"
+import { Project, Skill, User } from "@/types";
 
 export const getUser = (userId:string):Promise<User> => {
   return new Promise((resolve, reject) => {

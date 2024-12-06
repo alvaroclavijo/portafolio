@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import FixedWidthContainer from "./UI/FixedWidthContainer";
 import ProjectCard from "./ProjectCard";
 import { getProjects } from "@/services/user";
+import { Project } from "@/types";
 
 interface ProjectsProps {}
 
