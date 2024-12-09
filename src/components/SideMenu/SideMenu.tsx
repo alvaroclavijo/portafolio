@@ -3,6 +3,7 @@ import {motion, useCycle} from "framer-motion";
 import { useRef } from "react";
 import { Navigation } from "./Navigation";
 import { MenuToggle } from "./MenuToggle";
+import { cn } from "@/lib/utils";
 
 const sidebar = {
   open: (height = 1000) => ({
@@ -38,11 +39,16 @@ const SideMenu = () => {
       ref={containerRef}
     >
       <motion.div 
-        className="fixed top-0 left-0 bottom-0 w-[300px] bg-white"
+        className={cn(
+          "fixed top-0 left-0 bottom-0 w-[300px]",
+          isOpen 
+            ? "bg-white/20 backdrop-blur-md border-r border-white/30" 
+            : "bg-white"
+        )}
         variants={sidebar} 
       />
       <Navigation />
-      <MenuToggle toggle={() => toggleOpen()} />
+      <MenuToggle toggle={() => toggleOpen()} isOpen={isOpen} />
     </motion.nav>
   );
 }

@@ -17,14 +17,14 @@ const variants = {
 };
 
 export const Navigation = () => (
-  <motion.ul
-    variants={variants}
-    className="m-0 p-6 absolute top-[100px] w-[230px]"
-  >
-    {sideMenuItems.map((item, index) => (
-      <MenuItem item={item} index={index} key={item.id} />
-    ))}
-  </motion.ul>
+    <motion.ul
+      variants={variants}
+      className="m-0 p-6 absolute top-[100px] w-[230px]"
+    >
+      {sideMenuItems.map((item, index) => (
+        <MenuItem item={item} index={index} key={item.id}/>
+      ))}
+    </motion.ul>
 );
 
 const sideMenuItems = [
