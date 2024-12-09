@@ -1,5 +1,6 @@
 import * as React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const variants = {
   open: {
@@ -20,17 +21,29 @@ const variants = {
 
 const colors = ["#FF008C", "#D309E1", "#9C1AFF", "#7700FF", "#4400FF"];
 
-export const MenuItem: React.FC<any> = ({ i }) => {
-  const style = { border: `2px solid ${colors[i]}` };
+export const MenuItem: React.FC<any> = ({ item, index }) => {
+  const style = { color: `${colors[index]}` };
   return (
-    <motion.li
-      variants={variants}
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.95 }}
-      className="list-none mb-5 flex items-center cursor-pointer"
-    >
-      <div className="w-[40px] h-[40px] rounded-full flex-[0_0_40px] mr-5" style={style} />
-      <div className="rounded-[5px] w-[200px] h-[20px] flex-1" style={style} />
-    </motion.li>
+    <Link href={item.link} className="no-underline">
+      <motion.li
+        variants={variants}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+        className="list-none mb-5 flex items-center justify-start cursor-pointer"
+      >
+        <div 
+          className="w-[40px] h-[40px] rounded-full mr-5 flex items-center justify-center" 
+          style={style}
+        >
+          {item.icon}
+        </div>
+        <div 
+          className="rounded-[5px] h-[20px] flex items-center" 
+          style={style}
+        >
+          {item.label}
+        </div>
+      </motion.li>
+    </Link>
   );
 };
