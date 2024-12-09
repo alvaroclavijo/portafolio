@@ -31,13 +31,16 @@ const SideMenu = () => {
 
   return (
     <motion.nav
-      className="absolute top-0 left-0 bottom-0 z-50 w-[300px]"
+      className="fixed top-0 left-0 bottom-0 z-50 w-[300px]"
       initial={false}
       animate={isOpen ? "open" : "closed"}
       custom={height}
       ref={containerRef}
     >
-      <motion.div className="absolute top-0 left-0 bottom-0 w-[300px] bg-white" variants={sidebar} />
+      <motion.div 
+        className="fixed top-0 left-0 bottom-0 w-[300px] bg-white"
+        variants={sidebar} 
+      />
       <Navigation />
       <MenuToggle toggle={() => toggleOpen()} />
     </motion.nav>

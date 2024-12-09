@@ -7,9 +7,11 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <div className="relative bg-gray-500" style={{backgroundColor: 'lightgray'}}>
+    <div className="min-h-screen bg-gray-500" style={{backgroundColor: 'lightgray'}}>
       <SideMenu />
-      {children}
+      <main className="relative ml-[80px]">
+        {children}
+      </main>
     </div>
   );
 };
